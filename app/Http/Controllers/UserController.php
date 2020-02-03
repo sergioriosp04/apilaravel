@@ -78,12 +78,54 @@ class UserController extends Controller
     }
 
     public function login(Request $request){
-            $jwtAuth = new \JwtAuth();
+        $jwtAuth = new \JwtAuth();
 
-            $email = 'jorge@jorge.com';
-            $password = '1036400564';
-            $pwd = hash('sha256', $password);
+        //recibir datos por post
+        $json = $request->input('json', null);
+        $params = json_decode($json);
+        $params_array = json_decode($json, true);
 
-            return response()->json($jwtAuth->signup($email, $pwd, true));
+        //validar datos
+        $validate = \Validator::make($params_array, [
+            'email' => 'required|email', // que sea unico y haga relacion a la tabla users
+            'password' => 'required'
+        ]);
+
+        // si hay errors en validacion
+        if($validate->fails()){
+            // validacion fallo
+            $data = [
+                'status' => 'error',
+                'code' => 400,
+                'message' => 'el usuario no se ha podido identifiacar',
+                'errors' => $validate->errors()
+            ];
+        }else{
+            //cifrar contraseña
+            $pwd = hash('sha256', $params->password);
+
+            //devolver datos
+            $signup =  $jwtAuth->signup($params->email, $pwd);
+
+            if(!empty($params->gettoken)){
+                $signup =  $jwtAuth->signup($params->email, $pwd, true);
+            }
+
         }
+        return response()->json($signup, 200);
+    }
+
+    public function update(Request $request){
+        //$token = $request->headers('Authorization');
+        $token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjMsImVtYWlsIjoiam9yZ2VAam9yZ2UuY29tIiwibmFtZSI6ImpvcmdlIiwic3VybmFtZSI6InJpb3MiLCJpYXQiOjE1ODA3NzE1ODcsImV4cCI6MTU4MDc3MjE4N30.zYgp8I1PlGeiSqW3AXQCWTCc3SbR0WaRaTcyq4Dc2Mw';
+        $jwtAuth = new \JwtAuth();
+        $checkToken = $jwtAuth->checkToken($token);
+
+        if($checkToken){
+            echo "login correcto";
+        }else{
+            echo "login incorrecto";
+        }
+        die();
+    }
 }
