@@ -27,6 +27,9 @@
     <expand />
     <select />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/symfony/console" />
@@ -167,6 +170,8 @@
       <workItem from="1580578610031" duration="11085000" />
       <workItem from="1580661352613" duration="9679000" />
       <workItem from="1580671389438" duration="740000" />
+      <workItem from="1580738082433" duration="604000" />
+      <workItem from="1580738718184" duration="14248000" />
     </task>
     <servers />
   </component>
@@ -186,9 +191,14 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="446" y="168" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1580666796722" />
-    <state x="378" y="189" key="com.intellij.ide.util.TipDialog" timestamp="1580671397162">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="2438" y="288" key="NewPhpFileDialog" timestamp="1580739260325">
+      <screen x="1920" y="0" width="1366" height="728" />
     </state>
+    <state x="2438" y="288" key="NewPhpFileDialog/0.0.1280.680/1920.0.1366.728@1920.0.1366.728" timestamp="1580739260325" />
+    <state x="2298" y="189" key="com.intellij.ide.util.TipDialog" timestamp="1580739181711">
+      <screen x="1920" y="0" width="1366" height="728" />
+    </state>
+    <state x="2298" y="189" key="com.intellij.ide.util.TipDialog/0.0.1280.680/1920.0.1366.728@1920.0.1366.728" timestamp="1580739181711" />
     <state x="378" y="189" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1580671397162" />
     <state x="342" y="44" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1580582348046">
       <screen x="0" y="0" width="1366" height="728" />
