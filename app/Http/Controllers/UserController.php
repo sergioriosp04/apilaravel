@@ -116,8 +116,9 @@ class UserController extends Controller
     }
 
     public function update(Request $request){
-        //$token = $request->headers('Authorization');
-        $token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjMsImVtYWlsIjoiam9yZ2VAam9yZ2UuY29tIiwibmFtZSI6ImpvcmdlIiwic3VybmFtZSI6InJpb3MiLCJpYXQiOjE1ODA3NzE1ODcsImV4cCI6MTU4MDc3MjE4N30.zYgp8I1PlGeiSqW3AXQCWTCc3SbR0WaRaTcyq4Dc2Mw';
+        $token = $request->header('Authorization');
+        //dd($token);
+        //$token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjMsImVtYWlsIjoiam9yZ2VAam9yZ2UuY29tIiwibmFtZSI6ImpvcmdlIiwic3VybmFtZSI6InJpb3MiLCJpYXQiOjE1ODA4MzYwNDIsImV4cCI6MTU4MDgzNjY0Mn0.ZsW3UJWFJeDFrZlLasVAhct93ONOhB5c6uqKy9y0MeM';
         $jwtAuth = new \JwtAuth();
         $checkToken = $jwtAuth->checkToken($token);
 
