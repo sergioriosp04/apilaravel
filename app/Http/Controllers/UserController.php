@@ -116,17 +116,57 @@ class UserController extends Controller
     }
 
     public function update(Request $request){
+        // comprobar si el usuario esta autintificado
         $token = $request->header('Authorization');
         //dd($token);
         //$token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjMsImVtYWlsIjoiam9yZ2VAam9yZ2UuY29tIiwibmFtZSI6ImpvcmdlIiwic3VybmFtZSI6InJpb3MiLCJpYXQiOjE1ODA4MzYwNDIsImV4cCI6MTU4MDgzNjY0Mn0.ZsW3UJWFJeDFrZlLasVAhct93ONOhB5c6uqKy9y0MeM';
         $jwtAuth = new \JwtAuth();
         $checkToken = $jwtAuth->checkToken($token);
 
-        if($checkToken){
-            echo "login correcto";
+        // recoger los datos por POST
+        $json = $request->input('json', null);
+        $params_array = json_decode($json, true);
+
+        if($checkToken && !empty($params_array)){
+            // actualizar el usuario- pasos=
+
+            //sacar usuario identificado
+            $user = $jwtAuth->checkToken($token, true);
+
+            //validar los datos
+            $validate = \Validator::make($params_array, [
+                'name' => 'required|alpha',
+                'surname' => 'required|alpha',
+                'email' => 'required|email|unique:users'.$user->sub // que sea unico y haga relacion a la tabla users
+            ]);
+
+            // quitar los campos que no se actualizaran
+            unset($params_array['id']);
+            unset($params_array['password']);
+            unset($params_array['role']);
+            unset($params_array['created_at']);
+            unset($params_array['remember_token']);
+
+            //actualizar usuarip
+            $user_update = User::where('id', $user->sub)->update($params_array);
+            $params_json = json_encode($params_array);
+            $params_json = json_decode($params_json);
+            //retornar resultado
+            $data = array(
+                'code' => 200,
+                'status' => 'success',
+                'user' => $params_json
+            );
+
+
         }else{
-            echo "login incorrecto";
+            // sacar el error
+            $data = [
+                'code' => 400,
+                'status' => 'error',
+                'message' => 'El usuario no esta identificado correctamente'
+            ];
         }
-        die();
+        return response()->json($data, $data['code']);
     }
 }
