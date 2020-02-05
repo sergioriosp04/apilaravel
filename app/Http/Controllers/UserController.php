@@ -170,12 +170,27 @@ class UserController extends Controller
 
     //metodo para subir avatar
     public function upload(Request $request){
+        //recoger los datos de la peticion
+        $image = $request->file('file0');
 
-        $data = [
-            'code' => 400,
-            'status' => 'error',
-            'message' => 'Error al subir la imagen'
-        ];
+        //guardar imagen
+        if($image){
+            $image_name = time().$image->getClientOriginalName();
+            \Storage::disk('users')->put($image_name, \File::get($image));
+
+            $data = array(
+                'code' => 200,
+                'status' => 'success',
+                'image' => $image_name
+            );
+        }else{
+            $data = [
+                'code' => 400,
+                'status' => 'error',
+                'message' => 'Error al subir la imagen'
+            ];
+        }
+
         return response()->json($data, $data['code']);
     }
 }
