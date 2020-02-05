@@ -118,8 +118,6 @@ class UserController extends Controller
     public function update(Request $request){
         // comprobar si el usuario esta autintificado
         $token = $request->header('Authorization');
-        //dd($token);
-        //$token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjMsImVtYWlsIjoiam9yZ2VAam9yZ2UuY29tIiwibmFtZSI6ImpvcmdlIiwic3VybmFtZSI6InJpb3MiLCJpYXQiOjE1ODA4MzYwNDIsImV4cCI6MTU4MDgzNjY0Mn0.ZsW3UJWFJeDFrZlLasVAhct93ONOhB5c6uqKy9y0MeM';
         $jwtAuth = new \JwtAuth();
         $checkToken = $jwtAuth->checkToken($token);
 
@@ -167,6 +165,17 @@ class UserController extends Controller
                 'message' => 'El usuario no esta identificado correctamente'
             ];
         }
+        return response()->json($data, $data['code']);
+    }
+
+    //metodo para subir avatar
+    public function upload(Request $request){
+
+        $data = [
+            'code' => 400,
+            'status' => 'error',
+            'message' => 'Error al subir la imagen'
+        ];
         return response()->json($data, $data['code']);
     }
 }
