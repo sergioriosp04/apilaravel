@@ -150,6 +150,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -177,7 +178,9 @@
       <workItem from="1580999849499" duration="7974000" />
       <workItem from="1581083008807" duration="447000" />
       <workItem from="1581083475464" duration="154000" />
-      <workItem from="1581092102681" duration="613000" />
+      <workItem from="1581092102681" duration="1213000" />
+      <workItem from="1581348797280" duration="1220000" />
+      <workItem from="1581440507983" duration="5544000" />
     </task>
     <servers />
   </component>
@@ -205,10 +208,14 @@
       <screen x="1920" y="0" width="1366" height="728" />
     </state>
     <state x="2438" y="288" key="NewPhpFileDialog/0.0.1280.680/1920.0.1366.728@1920.0.1366.728" timestamp="1580739260325" />
-    <state x="2298" y="189" key="com.intellij.ide.util.TipDialog" timestamp="1581083480760">
+    <state x="2104" y="7" key="SettingsEditor" timestamp="1581459933674">
       <screen x="1920" y="0" width="1366" height="728" />
     </state>
-    <state x="2298" y="189" key="com.intellij.ide.util.TipDialog/0.0.1280.680/1920.0.1366.728@1920.0.1366.728" timestamp="1581083480760" />
+    <state x="2104" y="7" key="SettingsEditor/0.0.1280.680/1920.0.1366.728@1920.0.1366.728" timestamp="1581459933674" />
+    <state x="2298" y="189" key="com.intellij.ide.util.TipDialog" timestamp="1581440517394">
+      <screen x="1920" y="0" width="1366" height="728" />
+    </state>
+    <state x="2298" y="189" key="com.intellij.ide.util.TipDialog/0.0.1280.680/1920.0.1366.728@1920.0.1366.728" timestamp="1581440517394" />
     <state x="378" y="189" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1580671397162" />
     <state x="342" y="44" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1580582348046">
       <screen x="0" y="0" width="1366" height="728" />
