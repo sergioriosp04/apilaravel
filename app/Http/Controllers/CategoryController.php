@@ -78,4 +78,41 @@ class CategoryController extends Controller
         }
         return response()->json($data, $data['code']);
     }
+
+    public function update($id, Request $request){
+        // recoger datos por post
+        $json = $request->input('json', null);
+        $params_array = json_decode($json, true);
+
+        //validar los datos
+        if(!empty($params_array)){
+            $validator = \Validator::make($params_array, [
+                'name' => 'required'
+            ]);
+
+        //quitar lo que no se va actualizar
+            unset($params_array['id']);
+            unset($params_array['created_at']);
+
+        //actualizar el registro
+            $category = Category::where('id', $id)->update($params_array);
+            $data = [
+                'code' => 200,
+                'status' => ' success',
+                'category' =>  'categoria actualizada con exito'
+            ];
+
+
+        }else{
+            $data = [
+                'code' => 400,
+                'status' => 'error',
+                'message' => 'No se ha enviado ningun dato'
+            ];
+        }
+
+
+        //devolver respuesta
+        return \response()->json($data, $data['code']);
+    }
 }

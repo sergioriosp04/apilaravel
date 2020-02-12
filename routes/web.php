@@ -39,3 +39,6 @@ Route::get('/test-orm', 'PruebasController@testOrm');
 
     //RUTAS DEL CONTROLADOR DE CATEGORIAS
     Route::resource('/api/category', 'CategoryController');
+
+    //RUTAS DEL CONTROLADOR DE POSTS
+    Route::resource('/api/post', 'PostController');
