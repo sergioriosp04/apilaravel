@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c0d16f37-0286-41b5-ae6a-207cefb2b5f9" name="Default Changelist" comment="" />
+    <list default="true" id="c0d16f37-0286-41b5-ae6a-207cefb2b5f9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -178,6 +180,9 @@
       <workItem from="1581083008807" duration="447000" />
       <workItem from="1581083475464" duration="154000" />
       <workItem from="1581092102681" duration="613000" />
+      <workItem from="1581397998644" duration="1445000" />
+      <workItem from="1581646571681" duration="102000" />
+      <workItem from="1582002543681" duration="1533000" />
     </task>
     <servers />
   </component>
@@ -197,19 +202,20 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="446" y="168" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1580666796722" />
-    <state x="2383" y="120" key="FileChooserDialogImpl" timestamp="1581083626483">
-      <screen x="1920" y="0" width="1366" height="728" />
+    <state x="463" y="120" key="FileChooserDialogImpl" timestamp="1581646672354">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="2383" y="120" key="FileChooserDialogImpl/0.0.1280.680/1920.0.1366.728@1920.0.1366.728" timestamp="1581083626483" />
+    <state x="463" y="120" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1581646672354" />
     <state x="2438" y="288" key="NewPhpFileDialog" timestamp="1580739260325">
       <screen x="1920" y="0" width="1366" height="728" />
     </state>
     <state x="2438" y="288" key="NewPhpFileDialog/0.0.1280.680/1920.0.1366.728@1920.0.1366.728" timestamp="1580739260325" />
-    <state x="2298" y="189" key="com.intellij.ide.util.TipDialog" timestamp="1581083480760">
-      <screen x="1920" y="0" width="1366" height="728" />
+    <state x="378" y="189" key="com.intellij.ide.util.TipDialog" timestamp="1581646619059">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="2298" y="189" key="com.intellij.ide.util.TipDialog/0.0.1280.680/1920.0.1366.728@1920.0.1366.728" timestamp="1581083480760" />
-    <state x="378" y="189" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1580671397162" />
+    <state x="378" y="189" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1581646619059" />
     <state x="342" y="44" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1580582348046">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
