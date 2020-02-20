@@ -9,6 +9,10 @@ class Post extends Model
     //Indicar la tabla a la que hace referencia este modelo
     protected $table = 'posts';
 
+    protected $fillable = [
+        'title', 'content', 'category_id',
+    ];
+
     //relacion many to one
     public function user(){
         return $this->belongsTo('App\User', 'user_id'); //un usuario puede tener muchos posts
